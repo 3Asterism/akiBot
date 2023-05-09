@@ -390,3 +390,13 @@
 16:52:28.160947 version@stat F·[2 1] S·5KiB[2KiB 3KiB] Sc·[0.50 0.00]
 16:52:28.162006 memdb@flush committed F·1 T·2.6777ms
 16:52:28.162534 journal@remove removed @88
+=============== May 9, 2023 (CST) ===============
+17:15:35.845822 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:15:35.846335 version@stat F·[2 1] S·5KiB[2KiB 3KiB] Sc·[0.50 0.00]
+17:15:35.846335 db@open opening
+17:15:35.846335 journal@recovery F·1
+17:15:35.846335 journal@recovery recovering @90
+17:15:35.848389 memdb@flush created L0@92 N·2 S·376B "1cf..\x14=\xde,v72":"\xa2\xc1\x10..\x88\xa2{,v73"
+17:15:35.848389 version@stat F·[3 1] S·5KiB[2KiB 3KiB] Sc·[0.75 0.00]
+17:15:35.854041 db@janitor F·6 G·0
+17:15:35.854041 db@open done T·7.7057ms

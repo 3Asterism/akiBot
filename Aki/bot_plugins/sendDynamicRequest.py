@@ -136,7 +136,6 @@ async def weather(session):
     city = session.current_arg_text.strip()
     if not city:
         city = (await session.aget(prompt='uid')).strip()
-        # 如果用户只发送空白符，则继续询问
         command = (await session.aget(prompt='可查动态，关注，追番列表，未返回则设置了隐藏')).strip()
         if command == "动态":
             await session.send(",".join(sendRequest(city)))
