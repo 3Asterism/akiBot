@@ -1,7 +1,7 @@
 # go-cqhttp 默认配置文件
 
 account: # 账号相关
-  uin: 3372449262 # QQ账号
+  uin: 939146118 # QQ账号
   password: '' # 密码为空时使用扫码登录
   encrypt: false  # 是否开启密码加密
   status: 0      # 在线状态 请参考 https://docs.go-cqhttp.org/guide/config.html#在线状态
@@ -16,17 +16,26 @@ account: # 账号相关
   # 是否允许发送临时会话消息
   allow-temp-session: false
 
+  # 数据包的签名服务器
+  # 兼容 https://github.com/fuqiuluo/unidbg-fetch-qsign
+  # 如果遇到 登录 45 错误, 或者发送信息风控的话需要填入一个服务器
+  # 示例:
+  # sign-server: 'http://127.0.0.1:8080' # 本地签名服务器
+  # sign-server: 'https://signserver.example.com' # 线上签名服务器
+  # 服务器可使用docker在本地搭建或者使用他人开放的服务
+  sign-server: '-'
+
 heartbeat:
   # 心跳频率, 单位秒
   # -1 为关闭心跳
-  interval: 5
+  interval: 20
 
 message:
   # 上报数据类型
   # 可选: string,array
   post-format: string
   # 是否忽略无效的CQ码, 如果为假将原样发送
-  ignore-invalid-cqcode: false
+  ignore-invalid-cqcode: true
   # 是否强制分片发送消息
   # 分片发送将会带来更快的速度
   # 但是兼容性会有些问题
@@ -44,7 +53,9 @@ message:
   # 跳过 Mime 扫描, 忽略错误数据
   skip-mime-scan: false
   # 是否自动转换 WebP 图片
-  convert-webp-image: false
+  convert-webp-image: true
+  # http超时时间
+  http-timeout: 0
 
 output:
   # 日志等级 trace,debug,info,warn,error
@@ -90,9 +101,9 @@ database: # 数据库相关设置
 # 连接服务列表
 servers:
   # 添加方式，同一连接方式可添加多个，具体配置说明请查看文档
-  #- http: # http 通信
-  #- ws:   # 正向 Websocket
-  #- ws-reverse: # 反向 Websocket
+  #- http: http://127.0.0.1:9653# http 通信
+  #- ws:   http://127.0.0.1:9653# 正向 Websocket
+  #- ws-reverse: http://127.0.0.1:9653# 反向 Websocket
   #- pprof: #性能分析服务器
   # 反向WS设置
   - ws-reverse:
@@ -100,7 +111,7 @@ servers:
       # 注意 设置了此项地址后下面两项将会被忽略
       universal: ws://127.0.0.1:9653/ws
       # 反向WS API 地址
-      api: ws://your_websocket_api.server
+      api: ws://127.0.0.1:9653
       # 反向WS Event 地址
       event: ws://your_websocket_event.server
       # 重连间隔 单位毫秒
