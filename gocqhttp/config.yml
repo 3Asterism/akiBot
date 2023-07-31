@@ -55,7 +55,7 @@ message:
   # 是否自动转换 WebP 图片
   convert-webp-image: true
   # http超时时间
-  http-timeout: 0
+  http-timeout: 10
 
 output:
   # 日志等级 trace,debug,info,warn,error
@@ -115,6 +115,6 @@ servers:
       # 反向WS Event 地址
       event: ws://your_websocket_event.server
       # 重连间隔 单位毫秒
-      reconnect-interval: 3000
+      reconnect-interval: 2000
       middlewares:
         <<: *default # 引用默认中间件

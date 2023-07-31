@@ -105,3 +105,36 @@
 23:09:49.123172 version@stat F·[1 1] S·81KiB[10KiB 70KiB] Sc·[0.25 0.00]
 23:09:49.127297 db@janitor F·4 G·0
 23:09:49.127297 db@open done T·6.1845ms
+=============== Jul 31, 2023 (CST) ===============
+15:27:45.261756 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:27:45.262269 version@stat F·[1 1] S·81KiB[10KiB 70KiB] Sc·[0.25 0.00]
+15:27:45.262269 db@open opening
+15:27:45.262800 journal@recovery F·1
+15:27:45.262800 journal@recovery recovering @26
+15:27:45.264708 memdb@flush created L0@28 N·86 S·9KiB "\x00n\xbc4,v840":"\xff\xa0\xfc\xab,v793"
+15:27:45.264708 version@stat F·[2 1] S·90KiB[20KiB 70KiB] Sc·[0.50 0.00]
+15:27:45.269629 db@janitor F·5 G·0
+15:27:45.269629 db@open done T·7.36ms
+16:38:45.958093 memdb@flush N·201 S·31KiB
+16:38:45.961607 memdb@flush created L0@32 N·201 S·18KiB "\x00\x10 ~,v1027":"\xffĐn,v946"
+16:38:45.961941 version@stat F·[3 1] S·108KiB[38KiB 70KiB] Sc·[0.75 0.00]
+16:38:45.962556 memdb@flush committed F·1 T·4.1286ms
+16:38:45.963774 journal@remove removed @29
+=============== Jul 31, 2023 (CST) ===============
+16:42:53.343428 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:42:53.344182 version@stat F·[3 1] S·108KiB[38KiB 70KiB] Sc·[0.75 0.00]
+16:42:53.344182 db@open opening
+16:42:53.344690 journal@recovery F·1
+16:42:53.344690 journal@recovery recovering @31
+16:42:53.345819 memdb@flush created L0@33 N·16 S·1KiB "\x19\v\x11?,v1076":"\xfe\xb3<8,v1072"
+16:42:53.346467 version@stat F·[4 1] S·110KiB[40KiB 70KiB] Sc·[1.00 0.00]
+16:42:53.352342 db@janitor F·7 G·0
+16:42:53.352342 table@compaction L0·4 -> L1·1 S·110KiB Q·1088
+16:42:53.352342 db@open done T·8.1609ms
+16:42:53.362024 table@build created L1@36 N·1077 S·112KiB "\x00\x10 ~,v1027":"\xffĐn,v946"
+16:42:53.362024 version@stat F·[0 1] S·112KiB[0B 112KiB] Sc·[0.00 0.00]
+16:42:53.363071 table@compaction committed F-4 S+2KiB Ke·0 D·8 T·10.7288ms
+16:42:53.364341 table@remove removed @32
+16:42:53.364954 table@remove removed @28
+16:42:53.366070 table@remove removed @25
+16:42:53.366623 table@remove removed @24
