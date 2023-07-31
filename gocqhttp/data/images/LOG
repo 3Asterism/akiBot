@@ -167,3 +167,14 @@
 16:42:53.344062 table@remove removed @37
 16:42:53.344182 table@remove removed @36
 16:42:53.344690 table@remove removed @34
+=============== Jul 31, 2023 (CST) ===============
+17:43:57.003764 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:43:57.004912 version@stat F·[0 1] S·15KiB[0B 15KiB] Sc·[0.00 0.00]
+17:43:57.004912 db@open opening
+17:43:57.005488 journal@recovery F·1
+17:43:57.005488 journal@recovery recovering @43
+17:43:57.007981 memdb@flush created L0@46 N·15 S·1KiB "\x11\x8d<..Y\xdb5,v216":"\xe2\x80J..\x8d\x13\r,v214"
+17:43:57.007981 version@stat F·[1 1] S·16KiB[1KiB 15KiB] Sc·[0.25 0.00]
+17:43:57.017774 db@janitor F·5 G·1
+17:43:57.017774 db@janitor removing table-42
+17:43:57.017774 db@open done T·12.8621ms
