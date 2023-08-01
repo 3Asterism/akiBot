@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 # 获得csgo的在线人数
 @on_command('csgo')
-async def getPic(session):
+async def getCSGOOnlinePlayers(session):
     onlineURL = "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=730"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 '
@@ -23,7 +23,7 @@ async def getPic(session):
 
 
 @on_command('谁在玩游戏')
-async def getPic2(session):
+async def getWhoIsPlaying(session):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
     }
