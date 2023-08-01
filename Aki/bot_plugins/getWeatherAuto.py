@@ -9,7 +9,7 @@ __plugin_usage__ = '用法： 对我说 "ping"，我会回复 "pong!"'
 
 
 @nonebot.scheduler.scheduled_job('cron', hour='9')
-async def _(session):
+async def _():
     location = "江岸"
     url = "https://geoapi.qweather.com/v2/city/lookup?location={0}&key=78c8f2bd60494a3981e5a2cd5217db20".format(
         location)
