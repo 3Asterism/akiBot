@@ -25,6 +25,7 @@ async def getCSGOOnlinePlayers(session):
     # await session.send("csgo现在的在线人数为" + str(onlineNum) + "人", at_sender=True)
     await session.send(bot.on_message)
 
+
 @on_command('谁在玩游戏')
 async def getWhoIsPlaying(session):
     headers = {
@@ -103,7 +104,7 @@ async def getWhoIsPlaying(session):
                 draw.text((x, y), f"{column}: {str(row[column])}", fill='black', font=font)
 
         # 保存图片到本地，并指定'utf-8' encoding
-        save_path = r"C:/statpic/selected_data.png"
+        save_path = r"D:/statpic/selected_data.png"
         image.save(save_path, 'png', encoding='utf-8')
 
         await session.send(f"[CQ:image,file=file:///{save_path}]", at_sender=True)
