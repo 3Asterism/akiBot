@@ -64,3 +64,38 @@
 [2023-08-02 12:21:48] [WARNING]: 群消息发送失败: 账号可能被风控. 
 [2023-08-02 12:27:21] [WARNING]: 群消息发送失败: 账号可能被风控. 
 [2023-08-02 12:29:18] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56756->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 14:06:13] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 14:06:27] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 14:06:38] [WARNING]: 警告: 长消息响应延迟为 2003ms, 大于 1000ms, 可能导致无法接收/发送长消息的情况, 请检查本地网络状态. 
+[2023-08-02 14:06:48] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 14:18:53] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:58546->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 14:35:09] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 14:35:14] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:18] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:22] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:26] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:30] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:34] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:38] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:42] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:46] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:50] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:54] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:35:58] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:36:02] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:36:07] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:36:57] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 14:37:02] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:06] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:10] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:14] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:18] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:22] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:26] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:30] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:34] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:38] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:37:42] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 14:38:10] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 14:38:54] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 14:39:14] [WARNING]: 群消息发送失败: 账号可能被风控. 

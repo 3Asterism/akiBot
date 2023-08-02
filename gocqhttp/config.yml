@@ -23,7 +23,7 @@ account: # 账号相关
   # sign-server: 'http://127.0.0.1:8080' # 本地签名服务器
   # sign-server: 'https://signserver.example.com' # 线上签名服务器
   # 服务器可使用docker在本地搭建或者使用他人开放的服务
-  sign-server: '-'
+  sign-server: 'http://127.0.0.1:10086'
 
 heartbeat:
   # 心跳频率, 单位秒

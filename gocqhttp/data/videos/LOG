@@ -294,3 +294,39 @@
 12:16:22.636951 version@stat F·[] S·0B[] Sc·[]
 12:16:22.640079 db@janitor F·2 G·0
 12:16:22.640079 db@open done T·3.6384ms
+=============== Aug 2, 2023 (CST) ===============
+14:06:13.440597 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:06:13.441107 version@stat F·[] S·0B[] Sc·[]
+14:06:13.441107 db@open opening
+14:06:13.442155 journal@recovery F·1
+14:06:13.442155 journal@recovery recovering @64
+14:06:13.443267 version@stat F·[] S·0B[] Sc·[]
+14:06:13.447387 db@janitor F·2 G·0
+14:06:13.447387 db@open done T·6.2795ms
+=============== Aug 2, 2023 (CST) ===============
+14:35:00.299081 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:35:00.299597 version@stat F·[] S·0B[] Sc·[]
+14:35:00.299597 db@open opening
+14:35:00.300128 journal@recovery F·1
+14:35:00.300128 journal@recovery recovering @66
+14:35:00.300128 version@stat F·[] S·0B[] Sc·[]
+14:35:00.303278 db@janitor F·2 G·0
+14:35:00.303278 db@open done T·3.6812ms
+=============== Aug 2, 2023 (CST) ===============
+14:36:48.409444 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:36:48.409983 version@stat F·[] S·0B[] Sc·[]
+14:36:48.409983 db@open opening
+14:36:48.410042 journal@recovery F·1
+14:36:48.410042 journal@recovery recovering @68
+14:36:48.410042 version@stat F·[] S·0B[] Sc·[]
+14:36:48.413278 db@janitor F·2 G·0
+14:36:48.413278 db@open done T·3.2955ms
+=============== Aug 2, 2023 (CST) ===============
+14:38:47.237727 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:38:47.237727 version@stat F·[] S·0B[] Sc·[]
+14:38:47.237727 db@open opening
+14:38:47.238251 journal@recovery F·1
+14:38:47.238251 journal@recovery recovering @70
+14:38:47.238368 version@stat F·[] S·0B[] Sc·[]
+14:38:47.242661 db@janitor F·2 G·0
+14:38:47.242661 db@open done T·4.9346ms

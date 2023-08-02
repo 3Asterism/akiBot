@@ -457,3 +457,70 @@
 12:29:12.060942 version@stat F·[3 1] S·30KiB[5KiB 25KiB] Sc·[0.75 0.00]
 12:29:12.061991 memdb@flush committed F·1 T·3.8139ms
 12:29:12.062528 journal@remove removed @119
+=============== Aug 2, 2023 (CST) ===============
+14:06:13.433203 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:06:13.434281 version@stat F·[3 1] S·30KiB[5KiB 25KiB] Sc·[0.75 0.00]
+14:06:13.434281 db@open opening
+14:06:13.434281 journal@recovery F·1
+14:06:13.434281 journal@recovery recovering @121
+14:06:13.436429 memdb@flush created L0@123 N·2 S·371B "\"=\xa1..\xcc$\x02,v430":"\"=\xa1..\xcc$\x02,v429"
+14:06:13.436936 version@stat F·[4 1] S·31KiB[5KiB 25KiB] Sc·[1.00 0.00]
+14:06:13.440054 db@janitor F·7 G·0
+14:06:13.440054 db@open done T·5.7728ms
+14:06:13.440054 table@compaction L0·4 -> L1·1 S·31KiB Q·431
+14:06:13.443769 table@build created L1@126 N·256 S·27KiB "\x02s$..\xf4\xa5\xbd,v331":"\xff\xfd\t..l\x13\xc4,v370"
+14:06:13.444278 version@stat F·[0 1] S·27KiB[0B 27KiB] Sc·[0.00 0.00]
+14:06:13.444804 table@compaction committed F-4 S-3KiB Ke·0 D·33 T·4.2416ms
+14:06:13.444804 table@remove removed @122
+14:06:13.445313 table@remove removed @120
+14:06:13.445313 table@remove removed @116
+14:06:13.445839 table@remove removed @115
+=============== Aug 2, 2023 (CST) ===============
+14:35:00.292702 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:35:00.293271 version@stat F·[0 1] S·27KiB[0B 27KiB] Sc·[0.00 0.00]
+14:35:00.293271 db@open opening
+14:35:00.293774 journal@recovery F·1
+14:35:00.293774 journal@recovery recovering @124
+14:35:00.294901 memdb@flush created L0@127 N·12 S·1KiB "\x03\xad\xe7..\r\xff\xd9,v441":"\xfemQ..4\x91\xed,v436"
+14:35:00.295404 version@stat F·[1 1] S·29KiB[1KiB 27KiB] Sc·[0.25 0.00]
+14:35:00.298548 db@janitor F·5 G·1
+14:35:00.298548 db@janitor removing table-123
+14:35:00.299081 db@open done T·5.8102ms
+=============== Aug 2, 2023 (CST) ===============
+14:36:48.401196 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:36:48.401730 version@stat F·[1 1] S·29KiB[1KiB 27KiB] Sc·[0.25 0.00]
+14:36:48.401730 db@open opening
+14:36:48.401730 journal@recovery F·1
+14:36:48.401730 journal@recovery recovering @128
+14:36:48.403947 memdb@flush created L0@130 N·1 S·292B "\xc8\xd6f..\xf8\xa1r,v445":"\xc8\xd6f..\xf8\xa1r,v445"
+14:36:48.404503 version@stat F·[2 1] S·29KiB[1KiB 27KiB] Sc·[0.50 0.00]
+14:36:48.408909 db@janitor F·5 G·0
+14:36:48.408909 db@open done T·7.1786ms
+=============== Aug 2, 2023 (CST) ===============
+14:38:47.230327 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:38:47.231644 version@stat F·[2 1] S·29KiB[1KiB 27KiB] Sc·[0.50 0.00]
+14:38:47.231714 db@open opening
+14:38:47.231714 journal@recovery F·1
+14:38:47.231714 journal@recovery recovering @131
+14:38:47.232224 version@stat F·[2 1] S·29KiB[1KiB 27KiB] Sc·[0.50 0.00]
+14:38:47.237196 db@janitor F·5 G·0
+14:38:47.237196 db@open done T·5.4823ms
+14:54:17.248354 memdb@flush N·19 S·3KiB
+14:54:17.249950 memdb@flush created L0@136 N·19 S·1KiB "\x02Q\x8a..r\xa2\xb8,v450":"\xec\x88\x04..\xfa\xf6\xce,v456"
+14:54:17.249950 version@stat F·[3 1] S·31KiB[3KiB 27KiB] Sc·[0.75 0.00]
+14:54:17.250463 memdb@flush committed F·1 T·2.1087ms
+14:54:17.250991 journal@remove removed @133
+14:59:40.018635 memdb@flush N·19 S·3KiB
+14:59:40.022918 memdb@flush created L0@138 N·19 S·829B "\xec\x88\x04..\xfa\xf6\xce,v483":"\xf6T\xfd..\xf0\n\xed,v484"
+14:59:40.022918 version@stat F·[4 1] S·31KiB[4KiB 27KiB] Sc·[1.00 0.00]
+14:59:40.023982 memdb@flush committed F·1 T·5.3469ms
+14:59:40.024506 journal@remove removed @135
+14:59:40.024711 table@compaction L0·4 -> L1·1 S·31KiB Q·485
+14:59:40.033127 table@build created L1@139 N·279 S·30KiB "\x02Q\x8a..r\xa2\xb8,v450":"\xff\xfd\t..l\x13\xc4,v370"
+14:59:40.033127 version@stat F·[0 1] S·30KiB[0B 30KiB] Sc·[0.00 0.00]
+14:59:40.033640 table@compaction committed F-4 S-1KiB Ke·0 D·28 T·8.929ms
+14:59:40.034157 table@remove removed @138
+14:59:40.034672 table@remove removed @136
+14:59:40.034672 table@remove removed @130
+14:59:40.034672 table@remove removed @127
+14:59:40.034672 table@remove removed @126
