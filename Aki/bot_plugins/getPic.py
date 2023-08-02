@@ -5,13 +5,13 @@ import jsonpath
 from nonebot import on_command, MessageSegment
 
 
-@on_command('涩图')
+@on_command('3')
 async def getPic(session):
     originalURL = "https://api.lolicon.app/setu/v2"
     # 取得消息的内容，并且去掉首尾的空白符
     tag = session.current_arg_text.strip()
     if not tag:
-        tag = (await session.aget(prompt='请输入tag 多tag以空格分隔符号分割')).strip()
+        tag = (await session.aget(prompt='请输入tag 多tag以|分隔符号分割')).strip()
         tagURL = "https://api.lolicon.app/setu/v2?tag={0}&size=regular".format(tag)
         response = requests.get(url=tagURL)
         page = json.loads(response.text)

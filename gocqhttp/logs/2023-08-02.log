@@ -2,3 +2,65 @@
 [2023-08-02 00:06:09] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
 [2023-08-02 00:06:19] [WARNING]: Protocol -> device lock is disable. http api may fail. 
 [2023-08-02 00:06:35] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 10:46:00] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 10:46:09] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 10:46:48] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:54620->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 10:46:52] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:54620->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 10:49:16] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:54667->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 10:49:32] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:54667->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 10:52:49] [WARNING]: 监听反向WS Universal时出现错误: websocket: close 1011 (internal server error) 
+[2023-08-02 10:52:52] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: websocket: close sent 
+[2023-08-02 10:53:02] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 10:53:10] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 11:01:28] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:54815->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:01:33] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:54815->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 11:17:53] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55058->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:17:53] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:55058->127.0.0.1:9653: wsasend: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:17:57] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 11:18:02] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 11:19:02] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55315->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:19:13] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:55315->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 11:27:45] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55346->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:27:53] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:55346->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 11:27:57] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 11:28:02] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 11:28:06] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-02 11:28:39] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55447->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:28:51] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 11:29:00] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 11:32:12] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55481->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:32:21] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 11:32:35] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 11:36:47] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55559->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:37:19] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 11:37:25] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 11:55:05] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:55687->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:55:08] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:55687->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 11:56:55] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56048->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 11:57:04] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:56048->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 12:03:12] [WARNING]: 警告: 群 699194084 图片上传失败: image type error: text/html; charset=utf-8 
+[2023-08-02 12:03:12] [WARNING]: 群消息发送失败: 消息为空. 
+[2023-08-02 12:05:47] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56233->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 12:05:48] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:56233->127.0.0.1:9653: wsasend: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 12:09:11] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56509->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 12:09:14] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:56509->127.0.0.1:9653: use of closed network connection 
+[2023-08-02 12:09:27] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56572->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 12:09:28] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:56572->127.0.0.1:9653: wsasend: An existing connection was forcibly closed by the remote host. 
+[2023-08-02 12:14:08] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:15] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:18] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:18] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:19] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:21] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:22] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:14:25] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:15:27] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:16:22] [WARNING]: 警告: 未配置签名服务器, 这可能会导致登录 45 错误码或发送消息被风控 
+[2023-08-02 12:16:31] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-02 12:16:55] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:17:23] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:17:44] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:17:46] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:21:48] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:27:21] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-02 12:29:18] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56756->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 

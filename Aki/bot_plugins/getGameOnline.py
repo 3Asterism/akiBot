@@ -1,9 +1,11 @@
 import datetime
 import json
+
+import nonebot
 import requests
 import jsonpath
 
-from nonebot import on_command, MessageSegment
+from nonebot import on_command
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 
@@ -11,6 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 # 获得csgo的在线人数
 @on_command('csgo')
 async def getCSGOOnlinePlayers(session):
+    bot = nonebot.get_bot()
     onlineURL = "https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=730"
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 '
@@ -19,8 +22,8 @@ async def getCSGOOnlinePlayers(session):
     response = requests.get(url=onlineURL, headers=headers)
     page = json.loads(response.text)
     onlineNum = jsonpath.jsonpath(page["response"], "$..player_count")[0]
-    await session.send("csgo现在的在线人数为" + str(onlineNum) + "人")
-
+    # await session.send("csgo现在的在线人数为" + str(onlineNum) + "人", at_sender=True)
+    await session.send(bot.on_message)
 
 @on_command('谁在玩游戏')
 async def getWhoIsPlaying(session):
@@ -100,9 +103,9 @@ async def getWhoIsPlaying(session):
                 draw.text((x, y), f"{column}: {str(row[column])}", fill='black', font=font)
 
         # 保存图片到本地，并指定'utf-8' encoding
-        save_path = r"D:/statpic/selected_data.png"
+        save_path = r"C:/statpic/selected_data.png"
         image.save(save_path, 'png', encoding='utf-8')
 
-        await session.send(f"[CQ:image,file=file:///{save_path}]")
+        await session.send(f"[CQ:image,file=file:///{save_path}]", at_sender=True)
     else:
-        await session.send("现在没人在线!")
+        await session.send("现在没人在线!", at_sender=True)
