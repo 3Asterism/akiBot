@@ -70,7 +70,7 @@ def get_live_status_by_room_ids(room_ids):
 
             if current_data is not None:
                 current_live_status, current_title, current_uname = current_data
-                if current_live_status != live_status or current_title != title or current_uname != uname:
+                if current_live_status != live_status or current_uname != uname:
                     # 出现了不同，将变化的记录添加到列表中
                     changed_records.append((live_status, title, uname))
 
@@ -249,7 +249,7 @@ def update_database(room_ids, live_statuses, titles, unames):
 
             if current_data is not None:
                 current_live_status, current_title, current_uname = current_data
-                if current_live_status != new_live_status or current_title != new_title or current_uname != new_uname:
+                if current_live_status != new_live_status or current_uname != new_uname:
                     # 出现了不同，更新数据库中的数据和时间
                     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     cursor.execute(

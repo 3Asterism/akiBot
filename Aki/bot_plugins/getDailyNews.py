@@ -1,3 +1,5 @@
+import os
+
 import nonebot
 from nonebot import on_command
 import requests
@@ -24,8 +26,8 @@ async def _(session):
     # 要获取的图片URL
     image_url = 'https://api.03c3.cn/zb/'
 
-    # 保存图片的本地路径（注意使用原始字符串表示路径）
-    save_path = r'C:\news\image.jpg'
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.path.join(current_dir, '..', '..', 'pic', 'news', 'image.jpg')
 
     # 发送GET请求并保存图片
     save_image_from_url(image_url, save_path)
