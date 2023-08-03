@@ -614,3 +614,8 @@
 16:40:05.012227 version@stat F·[2 1] S·345KiB[3KiB 341KiB] Sc·[0.50 0.00]
 16:40:05.021980 db@janitor F·5 G·0
 16:40:05.021980 db@open done T·10.7511ms
+17:13:10.505390 memdb@flush N·173 S·31KiB
+17:13:10.509861 memdb@flush created L0@168 N·173 S·18KiB "\x02\xa9J\xf6,v3192":"\xff\xcc\xdeH,v3233"
+17:13:10.510404 version@stat F·[3 1] S·364KiB[22KiB 341KiB] Sc·[0.75 0.00]
+17:13:10.510962 memdb@flush committed F·1 T·5.5724ms
+17:13:10.511492 journal@remove removed @165

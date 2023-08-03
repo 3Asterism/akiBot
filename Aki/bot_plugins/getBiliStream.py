@@ -7,6 +7,7 @@ import requests
 from nonebot import on_command
 import mysql.connector
 from PIL import Image, ImageDraw, ImageFont
+import os
 
 
 def save_records_as_image_with_auto_adaptation(records, filename, background_image_path):
@@ -274,7 +275,7 @@ def map_live_status_to_string(live_status):
         2: "轮播中",
         0: "摸鱼中"
     }
-    return status_map.get(live_status, "未知状态")
+    return status_map.get(live_status, "摸鱼中")
 
 
 def map_live_status_to_integer(live_status):
@@ -283,7 +284,7 @@ def map_live_status_to_integer(live_status):
         "轮播中": 2,
         "摸鱼中": 0
     }
-    return status_map.get(live_status, -1)  # 如果无法匹配，返回默认值 -1
+    return status_map.get(live_status, 0)  # 如果无法匹配，返回默认值 -1
 
 
 @nonebot.scheduler.scheduled_job('cron', minute='*')
@@ -296,12 +297,13 @@ async def getMinutesData():
         print("没有发生变化的记录")
         return
     update_database(room_ids, live_statuses, titles)
-    # save_records_as_image_with_auto_adaptation(changed_records, 'D:/statpic/records_image_high_resolution2.png',
-    #                                            'D:/background/back.jpg')
-    save_records_as_image_with_auto_adaptation(changed_records, 'C:/statpic/records_image_high_resolution2.png',
-                                               'C:/background/back.png')
-    # save_path = r"D:/statpic/records_image_high_resolution2.png"
-    save_path = r"C:/statpic/records_image_high_resolution2.png"
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # 构建相对路径
+    save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution2.png')
+    background_image_path = os.path.join(current_dir, '..', '..', 'pic', 'background', 'back.png')
+    # 使用相对路径调用函数
+    save_records_as_image_with_auto_adaptation(changed_records, save_path, background_image_path)
     if not changed_records:
         return
     else:
@@ -331,11 +333,11 @@ async def _(session):
 # 返回现在所有主播的状态
 @on_command('监控')
 async def _(session):
+    # 获取当前文件的绝对路径
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     records = get_live_status_equals_1()
-    # save_records_as_image_with_auto_adaptation(records, 'D:/statpic/records_image_high_resolution.png',
-    #                                            'D:/background/back.jpg')
-    # save_path = r"D:/statpic/records_image_high_resolution.png"
-    save_records_as_image_with_auto_adaptation(records, 'C:/statpic/records_image_high_resolution.png',
-                                               'C:/background/back.png')
-    save_path = r"C:/statpic/records_image_high_resolution.png"
+    # 构建相对路径
+    save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution.png')
+    background_image_path = os.path.join(current_dir, '..', '..', 'pic', 'background', 'back.png')
+    save_records_as_image_with_auto_adaptation(records, save_path, background_image_path)
     await session.send(f"[CQ:image,file=file:///{save_path}]", at_sender=True)
