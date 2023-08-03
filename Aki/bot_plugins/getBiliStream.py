@@ -70,14 +70,12 @@ def get_live_status_by_room_ids(room_ids):
 
             if current_data is not None:
                 current_live_status, current_title, current_uname = current_data
-                if current_live_status != live_status or current_uname != uname:
+                if current_live_status != live_status or current_title != title or current_uname != uname:
                     # 出现了不同，将变化的记录添加到列表中
                     changed_records.append((live_status, title, uname))
 
         else:
             print(f"请求{idURL}失败")
-    # 将数字状态转换为字符串状态
-    live_statuses = [map_live_status_to_string(status) for status in live_statuses]
 
     return live_statuses, titles, unames, changed_records
 
@@ -226,7 +224,7 @@ def get_live_status_equals_1():
         conn.close()
 
 
-def update_database(room_ids, live_statuses, titles):
+def update_database(room_ids, live_statuses, titles, unames):
     # 数据库连接参数
     db_host = 'localhost'
     db_user = 'root'
@@ -241,24 +239,22 @@ def update_database(room_ids, live_statuses, titles):
     try:
         for i in range(len(room_ids)):
             room_id = room_ids[i]
-            new_live_status = live_statuses[i]
+            new_live_status = map_live_status_to_integer(live_statuses[i])
             new_title = titles[i]
-
-            # 将live_status字段从字符串转换为整数
-            new_live_status = map_live_status_to_integer(new_live_status)
+            new_uname = unames[i]
 
             # 查询当前数据库中的数据
-            cursor.execute("SELECT live_status, title FROM bili_live_status WHERE room_id = %s", (room_id,))
+            cursor.execute("SELECT live_status, title, uname FROM bili_live_status WHERE room_id = %s", (room_id,))
             current_data = cursor.fetchone()
 
             if current_data is not None:
-                current_live_status, current_title = current_data
-                if current_live_status != new_live_status or current_title != new_title:
+                current_live_status, current_title, current_uname = current_data
+                if current_live_status != new_live_status or current_title != new_title or current_uname != new_uname:
                     # 出现了不同，更新数据库中的数据和时间
                     current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                     cursor.execute(
-                        "UPDATE bili_live_status SET live_status = %s, title = %s, time = %s WHERE room_id = %s",
-                        (new_live_status, new_title, current_time, room_id))
+                        "UPDATE bili_live_status SET live_status = %s, title = %s, uname = %s, time = %s WHERE room_id = %s",
+                        (new_live_status, new_title, new_uname, current_time, room_id))
                     conn.commit()
 
     except Exception as e:
@@ -296,12 +292,14 @@ async def getMinutesData():
     if not changed_records:
         print("没有发生变化的记录")
         return
-    update_database(room_ids, live_statuses, titles)
+    update_database(room_ids, live_statuses, titles, unames)  # 修改这里，传入unames参数
     current_dir = os.path.dirname(os.path.abspath(__file__))
 
     # 构建相对路径
     save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution2.png')
     background_image_path = os.path.join(current_dir, '..', '..', 'pic', 'background', 'back.png')
+    # 将 changed_records 中的 live_status 数字值转换为字符串形式
+    changed_records = [(map_live_status_to_string(status), title, uname) for status, title, uname in changed_records]
     # 使用相对路径调用函数
     save_records_as_image_with_auto_adaptation(changed_records, save_path, background_image_path)
     if not changed_records:

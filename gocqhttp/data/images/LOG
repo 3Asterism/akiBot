@@ -697,3 +697,69 @@
 17:15:20.068029 version@stat F·[3 1] S·44KiB[4KiB 40KiB] Sc·[0.75 0.00]
 17:15:20.068843 memdb@flush committed F·1 T·4.207ms
 17:15:20.069366 journal@remove removed @189
+=============== Aug 3, 2023 (CST) ===============
+17:41:11.769185 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:41:11.770226 version@stat F·[3 1] S·44KiB[4KiB 40KiB] Sc·[0.75 0.00]
+17:41:11.770226 db@open opening
+17:41:11.770226 journal@recovery F·1
+17:41:11.770226 journal@recovery recovering @191
+17:41:11.773446 memdb@flush created L0@193 N·13 S·1KiB "\x92\xd0\b..\xa2\xac\x88,v727":"\xe8\xd6\x1c..c\xdf|,v736"
+17:41:11.774589 version@stat F·[4 1] S·45KiB[5KiB 40KiB] Sc·[1.00 0.00]
+17:41:11.782932 db@janitor F·7 G·0
+17:41:11.782932 db@open done T·12.7054ms
+17:41:11.783492 table@compaction L0·4 -> L1·1 S·45KiB Q·740
+17:41:11.792924 table@build created L1@196 N·392 S·42KiB "\x00\x91\xf3..\xa5%&,v531":"\xff\xfd\t..l\x13\xc4,v370"
+17:41:11.793044 version@stat F·[0 1] S·42KiB[0B 42KiB] Sc·[0.00 0.00]
+17:41:11.793939 table@compaction committed F-4 S-3KiB Ke·0 D·42 T·10.4475ms
+17:41:11.794940 table@remove removed @192
+17:41:11.794940 table@remove removed @190
+17:41:11.794940 table@remove removed @180
+17:41:11.795938 table@remove removed @179
+=============== Aug 3, 2023 (CST) ===============
+17:41:25.326060 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:41:25.326607 version@stat F·[0 1] S·42KiB[0B 42KiB] Sc·[0.00 0.00]
+17:41:25.326607 db@open opening
+17:41:25.327161 journal@recovery F·1
+17:41:25.327161 journal@recovery recovering @194
+17:41:25.327701 version@stat F·[0 1] S·42KiB[0B 42KiB] Sc·[0.00 0.00]
+17:41:25.336043 db@janitor F·4 G·1
+17:41:25.336043 db@janitor removing table-193
+17:41:25.336043 db@open done T·9.4363ms
+=============== Aug 3, 2023 (CST) ===============
+17:49:10.146379 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:49:10.147896 version@stat F·[0 1] S·42KiB[0B 42KiB] Sc·[0.00 0.00]
+17:49:10.147896 db@open opening
+17:49:10.147896 journal@recovery F·1
+17:49:10.147896 journal@recovery recovering @197
+17:49:10.150823 memdb@flush created L0@199 N·4 S·635B "'?\x15..\xa6\x1d\xad,v744":"\xc4\xdcZ..a4\x9f,v742"
+17:49:10.152016 version@stat F·[1 1] S·43KiB[635B 42KiB] Sc·[0.25 0.00]
+17:49:10.159451 db@janitor F·4 G·0
+17:49:10.159451 db@open done T·11.5553ms
+=============== Aug 3, 2023 (CST) ===============
+17:51:45.153920 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:51:45.155032 version@stat F·[1 1] S·43KiB[635B 42KiB] Sc·[0.25 0.00]
+17:51:45.155032 db@open opening
+17:51:45.155150 journal@recovery F·1
+17:51:45.155150 journal@recovery recovering @200
+17:51:45.155654 version@stat F·[1 1] S·43KiB[635B 42KiB] Sc·[0.25 0.00]
+17:51:45.160892 db@janitor F·4 G·0
+17:51:45.160892 db@open done T·5.8596ms
+=============== Aug 3, 2023 (CST) ===============
+18:03:21.238494 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:03:21.239526 version@stat F·[1 1] S·43KiB[635B 42KiB] Sc·[0.25 0.00]
+18:03:21.239526 db@open opening
+18:03:21.239526 journal@recovery F·1
+18:03:21.239526 journal@recovery recovering @202
+18:03:21.242747 memdb@flush created L0@204 N·2 S·273B "\xf0\xb0G..3\xbc\xa1,v747":"\xf0\xb0G..3\xbc\xa1,v746"
+18:03:21.243266 version@stat F·[2 1] S·43KiB[908B 42KiB] Sc·[0.50 0.00]
+18:03:21.251886 db@janitor F·5 G·0
+18:03:21.251886 db@open done T·12.3602ms
+=============== Aug 3, 2023 (CST) ===============
+18:13:54.233431 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:13:54.234007 version@stat F·[2 1] S·43KiB[908B 42KiB] Sc·[0.50 0.00]
+18:13:54.234007 db@open opening
+18:13:54.234007 journal@recovery F·1
+18:13:54.234007 journal@recovery recovering @205
+18:13:54.234577 version@stat F·[2 1] S·43KiB[908B 42KiB] Sc·[0.50 0.00]
+18:13:54.242938 db@janitor F·5 G·0
+18:13:54.242938 db@open done T·8.9311ms
