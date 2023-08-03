@@ -69,12 +69,14 @@ def get_live_status_by_room_ids(room_ids):
 
             if current_data is not None:
                 current_live_status, current_title, current_uname = current_data
-                if current_live_status != live_status or current_title != title or current_uname != uname:
+                if current_live_status != live_status or current_uname != uname:
                     # 出现了不同，将变化的记录添加到列表中
                     changed_records.append((live_status, title, uname))
 
         else:
             print(f"请求{idURL}失败")
+    # 将数字状态转换为字符串状态
+    live_statuses = [map_live_status_to_string(status) for status in live_statuses]
 
     return live_statuses, titles, unames, changed_records
 
@@ -294,9 +296,12 @@ async def getMinutesData():
         print("没有发生变化的记录")
         return
     update_database(room_ids, live_statuses, titles)
-    save_records_as_image_with_auto_adaptation(changed_records, 'D:/statpic/records_image_high_resolution2.png',
-                                               'D:/background/back.jpg')
-    save_path = r"D:/statpic/records_image_high_resolution2.png"
+    # save_records_as_image_with_auto_adaptation(changed_records, 'D:/statpic/records_image_high_resolution2.png',
+    #                                            'D:/background/back.jpg')
+    save_records_as_image_with_auto_adaptation(changed_records, 'C:/statpic/records_image_high_resolution2.png',
+                                               'C:/background/back.png')
+    # save_path = r"D:/statpic/records_image_high_resolution2.png"
+    save_path = r"C:/statpic/records_image_high_resolution2.png"
     if not changed_records:
         return
     else:
@@ -327,7 +332,10 @@ async def _(session):
 @on_command('监控')
 async def _(session):
     records = get_live_status_equals_1()
-    save_records_as_image_with_auto_adaptation(records, 'D:/statpic/records_image_high_resolution.png',
-                                               'D:/background/back.jpg')
-    save_path = r"D:/statpic/records_image_high_resolution.png"
+    # save_records_as_image_with_auto_adaptation(records, 'D:/statpic/records_image_high_resolution.png',
+    #                                            'D:/background/back.jpg')
+    # save_path = r"D:/statpic/records_image_high_resolution.png"
+    save_records_as_image_with_auto_adaptation(records, 'C:/statpic/records_image_high_resolution.png',
+                                               'C:/background/back.png')
+    save_path = r"C:/statpic/records_image_high_resolution.png"
     await session.send(f"[CQ:image,file=file:///{save_path}]", at_sender=True)

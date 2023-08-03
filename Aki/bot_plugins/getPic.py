@@ -5,7 +5,7 @@ import jsonpath
 from nonebot import on_command, MessageSegment
 
 
-@on_command('3')
+@on_command('33333')
 async def getPic(session):
     originalURL = "https://api.lolicon.app/setu/v2"
     # 取得消息的内容，并且去掉首尾的空白符
