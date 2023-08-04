@@ -125,8 +125,17 @@ def get_data_from_db_by_uid(uid):
 def update_data_by_vmid(vmid):
     # 请求JSON数据
     url = f"https://api.bilibili.com/x/space/like/video?vmid={vmid}&w_rid=d3e9df4aa8a65c008155487f65c6a5b7&wts=1691137220"
-    json_obj = json.loads(requests.get(url).text)
+    response = requests.get(url)
+    if response.status_code != 200:
+        print(f"请求错误，跳过处理，vmid: {vmid}")
+        return False
 
+    json_obj = json.loads(requests.get(url).text)
+    print(json_obj)
+    # 检查data列表是否为空
+    if json_obj['data'] is None or not json_obj['data']['list']:
+        print(f"雪糕信息为空，跳过处理，vmid: {vmid}")
+        return False
     # 提取数据
     pic = jsonpath.jsonpath(json_obj, "$.data.list[*].pic")[0]
     title = jsonpath.jsonpath(json_obj, "$.data.list[*].title")[0]
@@ -164,8 +173,16 @@ def update_data_by_uid(uid):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE'
     }
-    json_obj = json.loads(requests.get(url, headers=headers).text)
+    response = requests.get(url)
+    if response.status_code != 200:
+        print(f"请求错误，跳过处理，vmid: {uid}")
+        return False
 
+    json_obj = json.loads(requests.get(url, headers=headers).text)
+    # 检查data列表是否为空
+    if not json_obj['data']['list']:
+        print(f"雪糕信息为空，跳过处理，uid: {uid}")
+        return False
     # 提取数据
     pic = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].pic")[0]
     title = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].title")[0]
@@ -524,7 +541,7 @@ async def randomIcecream(session):
     functions = [get_uid_data_from_db, get_vmdata_from_db]
 
     # 抽取权重 调高uid的权重 因为使用uid的up主较多
-    weights = [5, 1]
+    weights = [1, 1]
 
     # 随机选择一个函数
     random_func = random.choices(functions, weights=weights)[0]
@@ -534,7 +551,8 @@ async def randomIcecream(session):
 
     # 抽到vmid的情况
     if len(data) == 5:
-        pic, title, short_link_v2, pub_location, name = data[0][0], data[1][0], data[2][0], data[3][0], data[4][0]
+        randomNum = random.randint(0, len(data[0]) - 1)
+        pic, title, short_link_v2, pub_location, name = data[0][randomNum], data[1][randomNum], data[2][randomNum], data[3][randomNum], data[4][randomNum]
         # 要获取的图片URL
         image_url = pic
 
@@ -549,7 +567,8 @@ async def randomIcecream(session):
             at_sender=True)
     # 抽取到uid的情况
     else:
-        pic, title, bvid, name = data[0][0], data[1][0], data[2][0], data[3][0]
+        randomNum = random.randint(0, len(data[0]) - 1)
+        pic, title, bvid, name = data[0][randomNum], data[1][randomNum], data[2][randomNum], data[3][randomNum]
         # 要获取的图片URL
         image_url = pic
 
@@ -564,7 +583,7 @@ async def randomIcecream(session):
             at_sender=True)
 
 
-@nonebot.scheduler.scheduled_job('cron', minute='*')
+@nonebot.scheduler.scheduled_job('cron', hour='*')
 async def getNewData():
     # 获取所有的vmid和uid列表
     print("执行")
