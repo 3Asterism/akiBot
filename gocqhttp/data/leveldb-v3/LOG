@@ -783,3 +783,41 @@
 16:57:58.321667 db@janitor F·5 G·1
 16:57:58.321667 db@janitor removing table-203
 16:57:58.321667 db@open done T·10.3304ms
+=============== Aug 4, 2023 (CST) ===============
+17:49:27.202597 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:49:27.203601 version@stat F·[1 1] S·449KiB[16KiB 432KiB] Sc·[0.25 0.00]
+17:49:27.203601 db@open opening
+17:49:27.203601 journal@recovery F·1
+17:49:27.203601 journal@recovery recovering @208
+17:49:27.205894 memdb@flush created L0@210 N·5 S·991B "\x93-ո,v4097":"\xe4*\xe5.,v4098"
+17:49:27.205894 version@stat F·[2 1] S·450KiB[17KiB 432KiB] Sc·[0.50 0.00]
+17:49:27.211452 db@janitor F·5 G·0
+17:49:27.211957 db@open done T·8.3564ms
+=============== Aug 4, 2023 (CST) ===============
+17:58:56.071235 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:58:56.072235 version@stat F·[2 1] S·450KiB[17KiB 432KiB] Sc·[0.50 0.00]
+17:58:56.072235 db@open opening
+17:58:56.072235 journal@recovery F·1
+17:58:56.072235 journal@recovery recovering @211
+17:58:56.073235 memdb@flush created L0@213 N·4 S·544B "4\x9d\xd0\xd4,v4100":"ʚ,\xfa,v4101"
+17:58:56.074367 version@stat F·[3 1] S·450KiB[17KiB 432KiB] Sc·[0.75 0.00]
+17:58:56.079427 db@janitor F·6 G·0
+17:58:56.079427 db@open done T·7.1922ms
+=============== Aug 4, 2023 (CST) ===============
+18:03:38.142943 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+18:03:38.144174 version@stat F·[3 1] S·450KiB[17KiB 432KiB] Sc·[0.75 0.00]
+18:03:38.145186 db@open opening
+18:03:38.145186 journal@recovery F·1
+18:03:38.145186 journal@recovery recovering @214
+18:03:38.146194 memdb@flush created L0@216 N·11 S·1KiB "\x18\xddG\x0e,v4113":"\xdclC\x7f,v4112"
+18:03:38.147340 version@stat F·[4 1] S·451KiB[19KiB 432KiB] Sc·[1.00 0.00]
+18:03:38.151880 db@janitor F·7 G·0
+18:03:38.151880 db@open done T·6.6941ms
+18:03:38.151880 table@compaction L0·4 -> L1·1 S·451KiB Q·4116
+18:03:38.176164 table@build created L1@219 N·3987 S·451KiB "\x00\x10 ~,v1027":"\xff\xf4\x0e[,v1253"
+18:03:38.176246 version@stat F·[0 1] S·451KiB[0B 451KiB] Sc·[0.00 0.00]
+18:03:38.176755 table@compaction committed F-4 S-512B Ke·0 D·6 T·24.8747ms
+18:03:38.177847 table@remove removed @213
+18:03:38.178385 table@remove removed @210
+18:03:38.179011 table@remove removed @207
+18:03:38.179534 table@remove removed @206

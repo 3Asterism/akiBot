@@ -17,6 +17,9 @@ title_list = jsonpath.jsonpath(json_obj, "$.data.list[*].title")[0]
 short_link_v2_list = jsonpath.jsonpath(json_obj, "$.data.list[*].short_link_v2")[0]
 pub_location_list = jsonpath.jsonpath(json_obj, "$.data.list[*].pub_location")[0]
 name_list = jsonpath.jsonpath(json_obj, "$.data.list[*].owner.name")[0]
+id = "474248209"
+vmidURL = f"https://api.bilibili.com/x/space/like/video?vmid={id}&w_rid=d3e9df4aa8a65c008155487f65c6a5b7&wts=1691137220"
+jsonResponse = json.loads(requests.get(vmidURL).text)["code"]
 
 # 打印列表
 print("图片链接列表:", pic_list)
@@ -24,7 +27,7 @@ print("视频标题列表:", title_list)
 print("短链接列表:", short_link_v2_list)
 print("发布地点列表:", pub_location_list)
 print("用户姓名:", name_list)
-
+print(jsonResponse == 53013)
 
 
 
