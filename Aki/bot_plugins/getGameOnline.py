@@ -22,8 +22,8 @@ async def getCSGOOnlinePlayers(session):
     response = requests.get(url=onlineURL, headers=headers)
     page = json.loads(response.text)
     onlineNum = jsonpath.jsonpath(page["response"], "$..player_count")[0]
-    # await session.send("csgo现在的在线人数为" + str(onlineNum) + "人", at_sender=True)
-    await session.send(bot.on_message)
+    await session.send("csgo现在的在线人数为" + str(onlineNum) + "人", at_sender=True)
+    # await session.send(bot.on_message)
 
 
 @on_command('谁在玩游戏')

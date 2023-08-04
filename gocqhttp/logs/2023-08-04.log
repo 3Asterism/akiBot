@@ -54,3 +54,6 @@
 [2023-08-04 10:23:26] [WARNING]: Protocol -> device lock is disable. http api may fail. 
 [2023-08-04 10:24:44] [WARNING]: Protocol -> device lock is disable. http api may fail. 
 [2023-08-04 15:31:16] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-04 15:35:56] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-04 16:58:09] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-04 16:58:54] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:60296->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 

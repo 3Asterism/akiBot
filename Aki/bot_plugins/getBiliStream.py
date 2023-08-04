@@ -322,7 +322,7 @@ async def getMinutesData():
 
 # 绑定主播
 @on_command('bind')
-async def _(session):
+async def bindStreamer(session):
     id = (await session.aget(prompt='请输入要绑定主播的直播间号(room_id) 可以通过查看直播间的url得到')).strip()
     idURL = f"https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo?room_ids={id}&req_biz=web_room_componet"
     response = requests.get(url=idURL)
@@ -342,7 +342,7 @@ async def _(session):
 
 # 返回现在所有主播的状态
 @on_command('监控')
-async def _(session):
+async def whoIsStreaming(session):
     # 获取当前文件的绝对路径
     current_dir = os.path.dirname(os.path.abspath(__file__))
     records = get_live_status_equals_1()

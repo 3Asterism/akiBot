@@ -4,6 +4,7 @@ import nonebot
 from nonebot import on_command
 import requests
 
+
 def save_image_from_url(url, save_path):
     try:
         response = requests.get(url)
@@ -22,7 +23,7 @@ async def getDailyNews():
 
 
 @on_command('今日新闻')
-async def _(session):
+async def dailyNews(session):
     # 要获取的图片URL
     image_url = 'https://api.03c3.cn/zb/'
 

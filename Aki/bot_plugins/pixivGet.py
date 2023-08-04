@@ -16,7 +16,7 @@ def extract_number_from_url(url):
 
 
 @on_command('20')
-async def _(session):
+async def getPixiv(session):
     # pixiv的tags是以空格分割的
     tag = session.current_arg_text.strip()
     if not tag:
