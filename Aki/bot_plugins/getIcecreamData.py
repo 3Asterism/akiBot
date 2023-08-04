@@ -4,10 +4,296 @@ import random
 
 import jsonpath
 import mysql
+import nonebot
 import requests
 from nonebot import on_command
 
 import mysql.connector
+
+import mysql.connector
+
+import mysql.connector
+
+
+def get_all_vmid_from_db():
+    # 连接数据库
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="live_stats"
+    )
+    cursor = connection.cursor()
+
+    # 查询所有vmid
+    query = "SELECT vmid FROM bili_icecreamer_firstvideo"
+    cursor.execute(query)
+    vmids = [row[0] for row in cursor.fetchall()]
+
+    # 关闭连接
+    cursor.close()
+    connection.close()
+
+    return vmids
+
+
+def get_all_uid_from_db():
+    # 连接数据库
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="live_stats"
+    )
+    cursor = connection.cursor()
+
+    # 查询所有uid
+    query = "SELECT mid FROM bili_uid_icecreamer_firstvideo"
+    cursor.execute(query)
+    uids = [row[0] for row in cursor.fetchall()]
+
+    # 关闭连接
+    cursor.close()
+    connection.close()
+
+    return uids
+
+
+def get_data_from_db_by_vmid(vmid):
+    # 连接数据库
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="live_stats"
+    )
+    cursor = connection.cursor()
+
+    # 查询数据
+    query = "SELECT pic, title, short_link_v2, pub_location, name FROM bili_icecreamer_firstvideo WHERE vmid = %s"
+    cursor.execute(query, (vmid,))
+    data = cursor.fetchone()
+
+    # 关闭连接
+    cursor.close()
+    connection.close()
+
+    # 返回数据字典
+    if data:
+        return {
+            "pic": data[0],
+            "title": data[1],
+            "short_link_v2": data[2],
+            "pub_location": data[3],
+            "name": data[4]
+        }
+    else:
+        return None
+
+
+def get_data_from_db_by_uid(uid):
+    # 连接数据库
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="live_stats"
+    )
+    cursor = connection.cursor()
+
+    # 查询数据
+    query = "SELECT pic, title, bvid, author FROM bili_uid_icecreamer_firstvideo WHERE mid = %s"
+    cursor.execute(query, (uid,))
+    data = cursor.fetchone()
+
+    # 关闭连接
+    cursor.close()
+    connection.close()
+
+    # 返回数据字典
+    if data:
+        return {
+            "pic": data[0],
+            "title": data[1],
+            "bvid": data[2],
+            "author": data[3]
+        }
+    else:
+        return None
+
+
+def update_data_by_vmid(vmid):
+    # 请求JSON数据
+    url = f"https://api.bilibili.com/x/space/like/video?vmid={vmid}&w_rid=d3e9df4aa8a65c008155487f65c6a5b7&wts=1691137220"
+    json_obj = json.loads(requests.get(url).text)
+
+    # 提取数据
+    pic = jsonpath.jsonpath(json_obj, "$.data.list[*].pic")[0]
+    title = jsonpath.jsonpath(json_obj, "$.data.list[*].title")[0]
+    short_link_v2 = jsonpath.jsonpath(json_obj, "$.data.list[*].short_link_v2")[0]
+    pub_location = jsonpath.jsonpath(json_obj, "$.data.list[*].pub_location")[0]
+    name = jsonpath.jsonpath(json_obj, "$.data.list[*].owner.name")[0]
+
+    # 检查是否需要更新
+    data_from_db = get_data_from_db_by_vmid(vmid)
+    if data_from_db and data_from_db["title"] == title:
+        return False
+
+    # 更新数据库
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="live_stats"
+    )
+    cursor = connection.cursor()
+
+    query = "UPDATE bili_icecreamer_firstvideo SET pic = %s, title = %s, short_link_v2 = %s, pub_location = %s, name = %s WHERE vmid = %s"
+    cursor.execute(query, (pic, title, short_link_v2, pub_location, name, vmid))
+    connection.commit()
+
+    cursor.close()
+    connection.close()
+
+    return True
+
+
+def update_data_by_uid(uid):
+    # 请求JSON数据
+    url = f"https://api.bilibili.com/x/space/wbi/arc/search?pn=1&ps=1&mid={uid}"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE'
+    }
+    json_obj = json.loads(requests.get(url, headers=headers).text)
+
+    # 提取数据
+    pic = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].pic")[0]
+    title = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].title")[0]
+    bvid = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].bvid")[0]
+    author = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].author")[0]
+
+    # 检查是否需要更新
+    data_from_db = get_data_from_db_by_uid(uid)
+    if data_from_db and data_from_db["title"] == title:
+        return False
+
+    # 更新数据库
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="123456",
+        database="live_stats"
+    )
+    cursor = connection.cursor()
+
+    query = "UPDATE bili_uid_icecreamer_firstvideo SET pic = %s, title = %s, bvid = %s, author = %s WHERE mid = %s"
+    cursor.execute(query, (pic, title, bvid, author, uid))
+    connection.commit()
+
+    cursor.close()
+    connection.close()
+
+    return True
+
+
+def update_all_vmid_data_in_db():
+    all_vmid = get_all_vmid_from_db()
+
+    for vmid in all_vmid:
+        update_vmid_data_in_db(vmid)
+
+
+def update_all_uid_data_in_db():
+    all_uid = get_all_uid_from_db()
+
+    for uid in all_uid:
+        update_uid_data_in_db(uid)
+
+
+def update_vmid_data_in_db(mid):
+    url = f"https://api.bilibili.com/x/space/like/video?vmid={mid}&w_rid=d3e9df4aa8a65c008155487f65c6a5b7&wts=1691137220"
+
+    json_obj = json.loads(requests.get(url).text)
+
+    # 提取最新的 "pic"、"title"、"short_link_v2"、"pub_location" 和 "name" 值
+    pic = jsonpath.jsonpath(json_obj, "$.data.list[*].pic")[0]
+    title = jsonpath.jsonpath(json_obj, "$.data.list[*].title")[0]
+    short_link_v2 = jsonpath.jsonpath(json_obj, "$.data.list[*].short_link_v2")[0]
+    pub_location = jsonpath.jsonpath(json_obj, "$.data.list[*].pub_location")[0]
+    name = jsonpath.jsonpath(json_obj, "$.data.list[*].owner.name")[0]
+
+    # 在这里执行数据库更新操作，使用 pic、title、short_link_v2、pub_location 和 name 更新对应的记录
+
+    # 假设你使用MySQL Connector/Python来连接数据库
+    import mysql.connector
+
+    # 连接数据库
+    conn = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='123456',
+        database='live_stats'
+    )
+
+    # 创建一个游标对象
+    cursor = conn.cursor()
+
+    # 构建更新语句
+    sql = "UPDATE bili_icecreamer_firstvideo SET pic=%s, title=%s, short_link_v2=%s, pub_location=%s, name=%s WHERE mid=%s"
+
+    # 执行更新操作
+    cursor.execute(sql, (pic, title, short_link_v2, pub_location, name, mid))
+
+    # 提交事务
+    conn.commit()
+
+    # 关闭游标和连接
+    cursor.close()
+    conn.close()
+
+
+def update_uid_data_in_db(mid):
+    url = f"https://api.bilibili.com/x/space/wbi/arc/search?pn=1&ps=1&mid={mid}"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36 QIHU 360SE'
+    }
+
+    json_obj = json.loads(requests.get(url, headers=headers).text)
+
+    # 使用 JSONPath 表达式提取字段
+    pic = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].pic")[0]
+    title = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].title")[0]
+    bvid = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].bvid")[0]
+    author = jsonpath.jsonpath(json_obj, "$.data.list.vlist[*].author")[0]
+
+    # 在这里执行数据库更新操作，使用 pic、title、bvid 和 author 更新对应的记录
+
+    # 假设你使用MySQL Connector/Python来连接数据库
+    import mysql.connector
+
+    # 连接数据库
+    conn = mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='123456',
+        database='live_stats'
+    )
+
+    # 创建一个游标对象
+    cursor = conn.cursor()
+
+    # 构建更新语句
+    sql = "UPDATE bili_uid_icecreamer_firstvideo SET pic=%s, title=%s, bvid=%s, author=%s WHERE mid=%s"
+
+    # 执行更新操作
+    cursor.execute(sql, (pic, title, bvid, author, mid))
+
+    # 提交事务
+    conn.commit()
+
+    # 关闭游标和连接
+    cursor.close()
+    conn.close()
 
 
 def get_uid_data_from_db():
@@ -276,3 +562,45 @@ async def randomIcecream(session):
         await session.send(
             f"[CQ:image,file=file:///{save_path}]" + "标题:" + title + "\n" + "链接:" + bvid + "\n" + "up主:" + name,
             at_sender=True)
+
+
+@nonebot.scheduler.scheduled_job('cron', minute='*')
+async def getNewData():
+    # 获取所有的vmid和uid列表
+    print("执行")
+    vmid_list = get_all_vmid_from_db()
+    uid_list = get_all_uid_from_db()
+
+    for vmid in vmid_list:
+        if update_data_by_vmid(vmid):
+            print(f"雪糕信息已更新，vmid: {vmid}")
+        else:
+            print("雪糕没有更新！")
+
+    for uid in uid_list:
+        if update_data_by_uid(uid):
+            print(f"雪糕信息已更新，uid: {uid}")
+        else:
+            print("雪糕没有更新！")
+    return
+
+
+@on_command("测试")
+async def test(session):
+    # 获取所有的vmid和uid列表
+    print("执行")
+    vmid_list = get_all_vmid_from_db()
+    uid_list = get_all_uid_from_db()
+
+    for vmid in vmid_list:
+        if update_data_by_vmid(vmid):
+            print(f"雪糕信息已更新，vmid: {vmid}")
+        else:
+            print("雪糕没有更新！")
+
+    for uid in uid_list:
+        if update_data_by_uid(uid):
+            print(f"雪糕信息已更新，uid: {uid}")
+        else:
+            print("雪糕没有更新！")
+    await session.send("结束")

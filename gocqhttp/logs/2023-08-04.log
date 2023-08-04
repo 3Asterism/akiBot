@@ -90,3 +90,18 @@
 [2023-08-04 18:41:48] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
 [2023-08-04 18:41:52] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
 [2023-08-04 18:42:37] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:57961->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-04 19:24:28] [WARNING]: Protocol -> device lock is disable. http api may fail. 
+[2023-08-04 19:25:10] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-04 19:26:50] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:64613->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-04 19:26:51] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:64613->127.0.0.1:9653: wsasend: An existing connection was forcibly closed by the remote host. 
+[2023-08-04 19:26:55] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-04 19:26:59] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-04 19:27:03] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-04 19:27:58] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:64863->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-04 19:28:11] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:64863->127.0.0.1:9653: use of closed network connection 
+[2023-08-04 19:28:59] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:64904->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-04 19:29:11] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:64904->127.0.0.1:9653: use of closed network connection 
+[2023-08-04 19:29:38] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:64951->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-04 19:29:51] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:64951->127.0.0.1:9653: use of closed network connection 
+[2023-08-04 19:29:55] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-04 19:29:59] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
