@@ -100,8 +100,11 @@ def get_vmdata_from_db():
 # 生成一个包含两个函数的列表
 functions = [get_uid_data_from_db, get_vmdata_from_db]
 
+# 抽取权重 调高uid的权重 因为使用uid的up主较多
+weights = [5, 1]
+
 # 随机选择一个函数
-random_func = random.choice(functions)
+random_func = random.choices(functions, weights=weights)[0]
 
 # 调用随机选择的函数并获取数据
 data = random_func()

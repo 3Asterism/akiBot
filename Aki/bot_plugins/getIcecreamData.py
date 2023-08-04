@@ -241,7 +241,7 @@ async def randomIcecream(session):
     weights = [5, 1]
 
     # 随机选择一个函数
-    random_func = random.choices(functions, weights=weights)
+    random_func = random.choices(functions, weights=weights)[0]
 
     # 调用随机选择的函数并获取数据
     data = random_func()
@@ -263,4 +263,16 @@ async def randomIcecream(session):
             at_sender=True)
     # 抽取到uid的情况
     else:
-        pass
+        pic, title, bvid, name = data[0][0], data[1][0], data[2][0], data[3][0]
+        # 要获取的图片URL
+        image_url = pic
+
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(current_dir, '..', '..', 'pic', 'icecream', 'icecream.jpg')
+
+        # 发送GET请求并保存图片
+        save_data_from_url(image_url, save_path)
+
+        await session.send(
+            f"[CQ:image,file=file:///{save_path}]" + "标题:" + title + "\n" + "链接:" + bvid + "\n" + "up主:" + name,
+            at_sender=True)
