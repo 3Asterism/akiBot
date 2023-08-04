@@ -8,6 +8,7 @@ from nonebot import on_command
 import mysql.connector
 from PIL import Image, ImageDraw, ImageFont
 import os
+import random
 
 
 def save_records_as_image_with_auto_adaptation(records, filename, background_image_path):
@@ -297,7 +298,18 @@ async def getMinutesData():
 
     # 构建相对路径
     save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution2.png')
-    background_image_path = os.path.join(current_dir, '..', '..', 'pic', 'background', 'back.png')
+
+    # 构建相对路径
+    background_dir = os.path.join(current_dir, '..', '..', 'pic', 'background')
+
+    # 使用os.listdir获取背景图片文件夹中的所有图片文件名
+    background_files = os.listdir(background_dir)
+
+    # 使用random.choice随机选择一张背景图片
+    background_image_filename = random.choice(background_files)
+
+    # 构建完整的背景图片路径
+    background_image_path = os.path.join(background_dir, background_image_filename)
     # 将 changed_records 中的 live_status 数字值转换为字符串形式
     changed_records = [(map_live_status_to_string(status), title, uname) for status, title, uname in changed_records]
     # 使用相对路径调用函数
@@ -336,6 +348,17 @@ async def _(session):
     records = get_live_status_equals_1()
     # 构建相对路径
     save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution.png')
-    background_image_path = os.path.join(current_dir, '..', '..', 'pic', 'background', 'back.png')
+    # 构建相对路径
+    background_dir = os.path.join(current_dir, '..', '..', 'pic', 'background')
+
+    # 使用os.listdir获取背景图片文件夹中的所有图片文件名
+    background_files = os.listdir(background_dir)
+
+    # 使用random.choice随机选择一张背景图片
+    background_image_filename = random.choice(background_files)
+
+    # 构建完整的背景图片路径
+    background_image_path = os.path.join(background_dir, background_image_filename)
+
     save_records_as_image_with_auto_adaptation(records, save_path, background_image_path)
     await session.send(f"[CQ:image,file=file:///{save_path}]", at_sender=True)
