@@ -1,0 +1,32 @@
+[2023-08-09 03:00:02] [ERROR]: Protocol -> parse incoming packet error: invalid packet type 
+[2023-08-09 03:00:02] [ERROR]: Protocol -> unexpected disconnect: read tcp 10.50.0.89:54899->180.109.192.57:8080: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-09 03:44:39] [ERROR]: Protocol -> unexpected disconnect: write tcp 10.50.0.89:55869->42.81.184.206:80: wsasend: An established connection was aborted by the software in your host machine. 
+[2023-08-09 08:28:12] [ERROR]: Protocol -> unexpected disconnect: read tcp 10.50.0.89:53227->180.101.246.123:8080: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. 
+[2023-08-09 10:16:36] [ERROR]: Protocol -> unexpected disconnect: read tcp 10.50.0.89:51467->183.47.102.213:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. 
+[2023-08-09 10:33:22] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 10:50:07] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 11:06:52] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 11:23:37] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 11:40:22] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 11:57:07] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 12:13:52] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 12:30:37] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 12:59:41] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 13:16:26] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 13:33:12] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 13:49:58] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 14:06:43] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 14:23:29] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 14:40:14] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 14:56:59] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 15:13:45] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 15:30:30] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 15:47:15] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-09 16:02:42] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:58392->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-09 16:02:56] [FATAL]: open cache image db failed: The process cannot access the file because it is being used by another process. 
+[2023-08-09 16:03:00] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:58392->127.0.0.1:9653: use of closed network connection 
+[2023-08-09 16:03:04] [WARNING]: 连接到反向WebSocket Universal服务器 ws://127.0.0.1:9653/ws 时出现错误: dial tcp 127.0.0.1:9653: connectex: No connection could be made because the target machine actively refused it. 
+[2023-08-09 16:08:08] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:52735->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-09 16:08:16] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:52735->127.0.0.1:9653: use of closed network connection 
+[2023-08-09 16:09:14] [WARNING]: 监听反向WS Universal时出现错误: read tcp 127.0.0.1:56036->127.0.0.1:9653: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-09 16:09:20] [WARNING]: 向反向WS Universal服务器推送 Event 时出现错误: write tcp 127.0.0.1:56036->127.0.0.1:9653: use of closed network connection 

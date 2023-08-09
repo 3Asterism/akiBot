@@ -16,10 +16,17 @@ def save_image_from_url(url, save_path):
         print(f"图片保存失败：{e}")
 
 
-@nonebot.scheduler.scheduled_job('cron', hour='12')
+@nonebot.scheduler.scheduled_job('cron', hour='10')
 async def getDailyNews():
     bot = nonebot.get_bot()
-    await bot.send_group_msg(group_id=699194084, message="[CQ:image,file=https://api.03c3.cn/zb/]")
+    image_url = 'https://api.03c3.cn/zb/'
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.path.join(current_dir, '..', '..', 'pic', 'news', 'image.jpg')
+
+    # 发送GET请求并保存图片
+    save_image_from_url(image_url, save_path)
+    await bot.send_group_msg(group_id=346502807, message="[CQ:image,file=e=file:///{save_path}]")
 
 
 @on_command('今日新闻')

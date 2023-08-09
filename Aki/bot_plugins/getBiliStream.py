@@ -317,7 +317,7 @@ async def getMinutesData():
     if not changed_records:
         return
     else:
-        await bot.send_group_msg(group_id=699194084, message=f"[CQ:image,file=file:///{save_path}]")
+        await bot.send_group_msg(group_id=346502807, message=f"[CQ:image,file=file:///{save_path}]")
 
 
 # 绑定主播

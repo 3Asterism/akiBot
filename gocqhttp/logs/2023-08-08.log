@@ -1,0 +1,28 @@
+[2023-08-08 01:40:02] [ERROR]: Protocol -> parse incoming packet error: invalid packet type 
+[2023-08-08 01:40:03] [ERROR]: Protocol -> unexpected disconnect: read tcp 10.50.0.89:58324->121.229.94.168:8080: wsarecv: An existing connection was forcibly closed by the remote host. 
+[2023-08-08 01:41:15] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-08 03:00:01] [ERROR]: Protocol -> unexpected disconnect: read tcp 10.50.0.89:64890->183.47.102.193:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. 
+[2023-08-08 07:41:11] [WARNING]: 群消息发送失败: 账号可能被风控. 
+[2023-08-08 10:15:36] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 10:54:42] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 11:24:47] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 11:41:33] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 11:58:19] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 12:17:47] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 13:14:59] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 13:31:44] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 13:48:30] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 14:05:15] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 14:30:02] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 14:46:47] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 15:03:32] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 15:20:17] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 15:37:02] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 15:53:47] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 16:10:34] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 16:27:19] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 16:44:04] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 17:00:50] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 17:17:37] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 17:34:24] [ERROR]: Protocol -> unexpected disconnect: EOF 
+[2023-08-08 17:51:09] [ERROR]: Protocol -> unexpected disconnect: EOF 

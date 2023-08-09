@@ -35,7 +35,7 @@ async def autoWuHanWeather():
     # 获得当前湿度
     humidity = jsonpath.jsonpath(page, '$..humidity')[0]
     await bot.send_group_msg(
-        group_id=699194084, message=f'''今天{location}的天气是:{weather}\n实际温度为:{temp}\n体感温度为{bodyTemp}\n天气为:{weather}\n当前风速为:{windSpeed}级\n当前湿度为:{humidity}%\n''')
+        group_id=346502807, message=f'''今天{location}的天气是:{weather}\n实际温度为:{temp}\n体感温度为{bodyTemp}\n天气为:{weather}\n当前风速为:{windSpeed}级\n当前湿度为:{humidity}%\n''')
 
 
 @on_command('今日天气')
