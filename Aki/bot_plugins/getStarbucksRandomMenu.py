@@ -5,8 +5,9 @@ import requests
 import os
 
 from nonebot import on_command
-@on_command('星巴克')
 
+
+@on_command('星巴克')
 async def star(session):
     category = (await session.aget(prompt='要推荐饮料还是食物')).strip()
     url = "https://www.starbucks.com.cn/assets/search/menu-source-zh.json"
@@ -24,15 +25,23 @@ async def star(session):
                 popular[index] = "false"
         random_title = random.choice(title)
         index = title.index(random_title)
+        if popular[index] == "false":
+            popular[index] = "不是畅销产品"
+        else:
+            popular[index] = "该产品为畅销产品哦"
 
         image_url = "https://www.starbucks.com.cn" + preview[index]
-        save_path = os.path.join(os.getcwd(), "image.jpg")
+        # save_path = os.path.join(os.getcwd(), "image.jpg")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(current_dir, '..', '..', 'pic', 'starbucks', 'image.jpg')
 
         response = requests.get(image_url)
         with open(save_path, "wb") as f:
             f.write(response.content)
 
-        await session.send("推荐的饮料" + random_title + "\n" + "描述:" + body[index] + "\n" + "预览图:" + f"[CQ:image,file=file:///{save_path}]" + "\n" + "是否畅销:" + popular[index], at_sender=True)
+        await session.send("\n" + "推荐的饮料:" + random_title + "\n" + "描述:" + body[
+            index] + "\n" + "预览图:" + f"[CQ:image,file=file:///{save_path}]" + "\n" + "是否畅销:" + popular[index],
+                           at_sender=True)
 
     elif category == "食物":
         filtered = {key: value for key, value in page.items() if "food" in key.lower()}
@@ -46,24 +55,22 @@ async def star(session):
                 popular[index] = "false"
         random_title = random.choice(title)
         index = title.index(random_title)
-
+        if popular[index] == "false":
+            popular[index] = "不是畅销产品"
+        else:
+            popular[index] = "该产品为畅销产品哦"
         image_url = "https://www.starbucks.com.cn" + preview[index]
-        save_path = os.path.join(os.getcwd(), "image.jpg")
+        # save_path = os.path.join(os.getcwd(), "image.jpg")
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(current_dir, '..', '..', 'pic', 'starbucks', 'image.jpg')
 
         response = requests.get(image_url)
         with open(save_path, "wb") as f:
             f.write(response.content)
 
-        await session.send("推荐的饮料" + random_title + "\n" + "描述:" + body[index] + "\n" + "预览图:" + f"[CQ:image,file=file:///{save_path}]" + "\n" + "是否畅销:" + popular[index], at_sender=True)
+        await session.send("\n" + "推荐的饮料:" + random_title + "\n" + "描述:" + body[
+            index] + "\n" + "预览图:" + f"[CQ:image,file=file:///{save_path}]" + "\n" + "是否畅销:" + popular[index],
+                           at_sender=True)
 
     else:
         await session.send("错误的输入")
-
-
-
-
-
-
-
-
-
