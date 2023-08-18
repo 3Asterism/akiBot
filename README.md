@@ -10,4 +10,6 @@
 功能可自取 但是请标明出处 有问题请写在issue里  
 ![image](https://github.com/3Asterism/akiBot/assets/72266886/c5370f92-5469-46ef-9d9b-82c39d8c0a34)
 ![image](https://github.com/3Asterism/akiBot/assets/72266886/a23247fe-9df2-4ed6-b1a3-c0fce1afd8ca)  
+![image](https://github.com/3Asterism/akiBot/assets/72266886/777e8ac0-09da-4636-b30d-2e21e8a7c181)  
+
 
