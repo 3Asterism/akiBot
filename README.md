@@ -1,5 +1,5 @@
 # akiBot  
-基于noneBot的qq群机器人 制作中  
+基于noneBot与gocqhttp的qq群机器人 制作中  
 完成功能  
 1.实时监控b站直播的功能 需要绑定直播间id 数据存储于数据库中    
 2.获取每日新闻  
