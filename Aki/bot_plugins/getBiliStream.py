@@ -11,6 +11,16 @@ import os
 import random
 
 
+def save_image_from_url(url, save_path):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        with open(save_path, 'wb') as file:
+            file.write(response.content)
+        print(f"图片保存成功：{save_path}")
+    except requests.exceptions.RequestException as e:
+        print(f"图片保存失败：{e}")
+
 def save_records_as_image_with_auto_adaptation(records, filename, background_image_path):
     # 加载背景图片并获取其尺寸
     background_image = Image.open(background_image_path)
@@ -53,6 +63,7 @@ def get_live_status_by_room_ids(room_ids):
     titles = []
     unames = []
     changed_records = []  # 存储发生变化的记录元组的列表
+    covers = []
 
     for id in room_ids:
         idURL = f"https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo?room_ids={id}&req_biz=web_room_componet"
@@ -62,6 +73,7 @@ def get_live_status_by_room_ids(room_ids):
             live_status = jsonpath.jsonpath(page["data"]["by_room_ids"][str(id)], "$..live_status")[0]
             title = jsonpath.jsonpath(page["data"]["by_room_ids"][str(id)], "$..title")[0]
             uname = jsonpath.jsonpath(page["data"]["by_room_ids"][str(id)], "$..uname")[0]
+            covers = jsonpath.jsonpath(page["data"]["by_room_ids"][str(id)], "$..cover")[0]
             live_statuses.append(live_status)
             titles.append(title)
             unames.append(uname)
@@ -78,7 +90,7 @@ def get_live_status_by_room_ids(room_ids):
         else:
             print(f"请求{idURL}失败")
 
-    return live_statuses, titles, unames, changed_records
+    return live_statuses, titles, unames, changed_records, covers
 
 
 def get_data_from_database(room_id):
@@ -288,36 +300,51 @@ def map_live_status_to_integer(live_status):
 async def getMinutesData():
     bot = nonebot.get_bot()
     room_ids = get_all_room_ids()
-    live_statuses, titles, unames, changed_records = get_live_status_by_room_ids(room_ids)
+    live_statuses, titles, unames, changed_records, covers = get_live_status_by_room_ids(room_ids)
     live_statuses = [map_live_status_to_string(status) for status in live_statuses]
     if not changed_records:
         print("没有发生变化的记录")
         return
     update_database(room_ids, live_statuses, titles, unames)  # 修改这里，传入unames参数
+
+    # current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # # 构建相对路径
+    # save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution2.png')
+    #
+    # # 构建相对路径
+    # background_dir = os.path.join(current_dir, '..', '..', 'pic', 'background')
+    #
+    # # 使用os.listdir获取背景图片文件夹中的所有图片文件名
+    # background_files = os.listdir(background_dir)
+    #
+    # # 使用random.choice随机选择一张背景图片
+    # background_image_filename = random.choice(background_files)
+    #
+    # # 构建完整的背景图片路径
+    # background_image_path = os.path.join(background_dir, background_image_filename)
+    # # 将 changed_records 中的 live_status 数字值转换为字符串形式
+    # changed_records = [(map_live_status_to_string(status), title, uname) for status, title, uname in changed_records]
+    # # 使用相对路径调用函数
+    # save_records_as_image_with_auto_adaptation(changed_records, save_path, background_image_path)
+
     current_dir = os.path.dirname(os.path.abspath(__file__))
-
-    # 构建相对路径
-    save_path = os.path.join(current_dir, '..', '..', 'pic', 'statpic', 'records_image_high_resolution2.png')
-
-    # 构建相对路径
-    background_dir = os.path.join(current_dir, '..', '..', 'pic', 'background')
-
-    # 使用os.listdir获取背景图片文件夹中的所有图片文件名
-    background_files = os.listdir(background_dir)
-
-    # 使用random.choice随机选择一张背景图片
-    background_image_filename = random.choice(background_files)
-
-    # 构建完整的背景图片路径
-    background_image_path = os.path.join(background_dir, background_image_filename)
-    # 将 changed_records 中的 live_status 数字值转换为字符串形式
-    changed_records = [(map_live_status_to_string(status), title, uname) for status, title, uname in changed_records]
-    # 使用相对路径调用函数
-    save_records_as_image_with_auto_adaptation(changed_records, save_path, background_image_path)
+    save_path = os.path.join(current_dir, '..', '..', 'pic', 'cover', 'cover.jpg')
+    save_image_from_url(covers[0], save_path)
     if not changed_records:
         return
     else:
-        await bot.send_group_msg(group_id=346502807, message=f"[CQ:image,file=file:///{save_path}]")
+        if live_statuses[0] == 0 or live_statuses[0] == "0":
+            live_statuses[0] = "下播"
+        elif live_statuses[0] == 1 or live_statuses[0] == "1":
+            live_statuses[0] = "上播"
+        else:
+            live_statuses[0] = "下播且轮播中"
+        await bot.send_group_msg(group_id=346502807, message=f"[CQ:image,file=file:///{save_path}]" + "标题:" + titles[0] + "\n" + "up主:" + unames[0] + "\n" + "直播状态:" + live_statuses[0])
+
+        # await session.send(
+        #     f"[CQ:image,file=file:///{save_path}]" + "标题:" + title + "\n" + "链接:" + short_link_v2 + "\n" + "发布自:" + pub_location + "\n" + "up主:" + name,
+        #     at_sender=True)
 
 
 # 绑定主播
