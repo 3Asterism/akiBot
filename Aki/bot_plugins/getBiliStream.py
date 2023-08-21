@@ -21,6 +21,7 @@ def save_image_from_url(url, save_path):
     except requests.exceptions.RequestException as e:
         print(f"图片保存失败：{e}")
 
+
 def save_records_as_image_with_auto_adaptation(records, filename, background_image_path):
     # 加载背景图片并获取其尺寸
     background_image = Image.open(background_image_path)
@@ -85,7 +86,7 @@ def get_live_status_by_room_ids(room_ids):
                 current_live_status, current_title, current_uname = current_data
                 if current_live_status != live_status or current_uname != uname:
                     # 出现了不同，将变化的记录添加到列表中
-                    changed_records.append((live_status, title, uname))
+                    changed_records.append((live_status, title, uname, covers, id))
 
         else:
             print(f"请求{idURL}失败")
@@ -330,17 +331,26 @@ async def getMinutesData():
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     save_path = os.path.join(current_dir, '..', '..', 'pic', 'cover', 'cover.jpg')
-    save_image_from_url(covers[0], save_path)
+
+    coverURL = f"https://api.live.bilibili.com/xlive/web-room/v1/index/getRoomBaseInfo?room_ids={changed_records[0][4]}&req_biz=web_room_componet"
+    response = requests.get(coverURL)
+    page = response.json()
+    print(changed_records[0][4])
+    cover = jsonpath.jsonpath(page["data"]["by_room_ids"][str(changed_records[0][4])], "$..cover")[0]
+    save_image_from_url(cover, save_path)
+    status = "错误"
     if not changed_records:
         return
     else:
-        if live_statuses[0] == 0 or live_statuses[0] == "0":
-            live_statuses[0] = "下播"
-        elif live_statuses[0] == 1 or live_statuses[0] == "1":
-            live_statuses[0] = "上播"
+        if changed_records[0][0] == 0 or changed_records[0][0] == "0":
+            status = "下播"
+        elif changed_records[0][0] == 1 or changed_records[0][0] == "1":
+            status = "上播"
         else:
-            live_statuses[0] = "下播且轮播中"
-        await bot.send_group_msg(group_id=346502807, message=f"[CQ:image,file=file:///{save_path}]" + "标题:" + titles[0] + "\n" + "up主:" + unames[0] + "\n" + "直播状态:" + live_statuses[0])
+            status = "下播且轮播中"
+        await bot.send_group_msg(group_id=346502807,
+                                 message=f"[CQ:image,file=file:///{save_path}]" + "标题:" + changed_records[0][
+                                     1] + "\n" + "up主:" + changed_records[0][2] + "\n" + "直播状态:" + status)
 
         # await session.send(
         #     f"[CQ:image,file=file:///{save_path}]" + "标题:" + title + "\n" + "链接:" + short_link_v2 + "\n" + "发布自:" + pub_location + "\n" + "up主:" + name,
